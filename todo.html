@@ -8,6 +8,7 @@
     <script src="https://use.fontawesome.com/f1a55c0348.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="todo.css" type="text/css" />
 </head>
 
@@ -18,7 +19,7 @@
         <div class="organiser">
 
             <div class="alltasks">
-                <div class='hot-keys'> All tasks
+                <div class='hot-keys'><button class="all-tasks">All tasks</button>
                     <div class='hot-buttons'>
                         <div class="search-button">
                             <button class="search"><i class="fa fa-search" aria-hidden="true"></i>
@@ -373,7 +374,34 @@
 
         </div>
     </div>
-
+    <script>
+    $(".search").click(function(){
+       $(".overlay").slideToggle("slow");
+       $(".search-tab").slideToggle("slow");
+       $(this).toggleClass("visible");
+   });
+   $(".task-adder").click(function(){
+      $(".overlay").slideToggle("slow");
+      $(".hidden-part").slideToggle("slow");
+      $(this).toggleClass("visible");
+   });
+   $(".favourite").click(function(){
+      $(".overlay").slideToggle("slow");
+      $(".hidden-tab").slideToggle("slow");
+      $(this).toggleClass("visible");
+   });
+   $(".duedate").click(function(){
+      $(".caledar-tab").slideToggle("slow");
+      $(".calendar-tab").toggleClass("visible");
+    });
+    $( ".all-tasks" ).click(function() {
+      $( ".overlay" ).slideUp();
+      $( ".hidden-part" ).slideUp();
+      $( ".hidden-tab" ).slideUp();
+      $( ".search-tab" ).slideUp();
+      $( ".calendar-tab" ).slideUp();
+    });
+    </script>
 </body>
 
 </html>
